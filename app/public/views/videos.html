@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="../assets/css/videos.css">
+
+
+
+
+
+<md-content ng-controller="VideosController as videos" layout="column" ng-cloak="ng-cloak" class="login-form">
+
+
+    <md-card>
+        <!-- <lf-ng-md-file-input lf-files="files" drag></lf-ng-md-file-input>-->
+
+        <lf-ng-md-file-input lf-files="addRemoteFiles" lf-api="addRemoteFilesApi" preview drag multiple></lf-ng-md-file-input>
+        <md-button ng-click="videos.onSubmit()"></md-button>
+
+    </md-card>
+
+
+</md-content>

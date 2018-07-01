@@ -1,0 +1,195 @@
+[
+
+    {
+        "id": 1,
+        "field": "Aile Hukuku"
+    },
+    {
+        "id": 2,
+        "field": "Anayasa Hukuku"
+    },
+    {
+        "id": 3,
+        "field": "AB Hukuku"
+    },
+    {
+        "id": 4,
+        "field": "Avukatlık Hukuku"
+    },
+    {
+        "id": 5,
+        "field": "Bankacılık Hukuku"
+    },
+    {
+        "id": 6,
+        "field": "Basın Hukuku"
+    },
+    {
+        "id": 7,
+        "field": "Bilişim Hukuku"
+    },
+    {
+        "id": 8,
+        "field": "Borçlar Hukuku"
+    },
+    {
+        "id": 9,
+        "field": "Boşanma Hukuku"
+    },
+    {
+        "id": 10,
+        "field": "Çevre Hukuku"
+    },
+    {
+        "id": 11,
+        "field": "Ceza Hukuku"
+    },
+    {
+        "id": 12,
+        "field": "Ceza Usül Hukuku"
+    },
+    {
+        "id": 13,
+        "field": "Deniz Hukuku"
+    },
+    {
+        "id": 14,
+        "field": "Devletler Hukuku"
+    },
+    {
+        "id": 15,
+        "field": "Eşya Hukuku"
+    },
+    {
+        "id": 16,
+        "field": "Fikir ve Sanat Hukuku"
+    },
+    {
+        "id": 17,
+        "field": "Gayrimenkul Hukuku"
+    },
+    {
+        "id": 18,
+        "field": "İcra Hukuku"
+    },
+    {
+        "id": 19,
+        "field": "İdare Hukuku"
+    },
+    {
+        "id": 20,
+        "field": "İdari Yargılama Hukuku"
+    },
+    {
+        "id": 21,
+        "field": "İflas Hukuku"
+    },
+    {
+        "id": 22,
+        "field": "İhale Hukuku"
+    },
+    {
+        "id": 23,
+        "field": "İmar Hukuku"
+    },
+    {
+        "id": 24,
+        "field": "İnternet Hukuku"
+    },
+    {
+        "id": 25,
+        "field": "İslam Hukuku"
+    },
+    {
+        "id": 26,
+        "field": "İş Hukuku"
+    },
+    {
+        "id": 27,
+        "field": "Kamu Hukuku"
+    },
+    {
+        "id": 28,
+        "field": "Kat Mülkiyeti Hukuku"
+    },
+    {
+        "id": 29,
+        "field": "Kıymetli Evrak Hukuku"
+    },
+    {
+        "id": 30,
+        "field": "Kira Hukuku"
+    },
+    {
+        "id": 31,
+        "field": "Mal Rejimleri Hukuku"
+    },
+    {
+        "id": 32,
+        "field": "Marka Patent Hukuku"
+    },
+    {
+        "id": 33,
+        "field": "Medeni Usül Hukuku"
+    },
+    {
+        "id": 34,
+        "field": "Miras Hukuku"
+    },
+    {
+        "id": 35,
+        "field": "Rekabet Hukuku"
+    },
+    {
+        "id": 36,
+        "field": "Reklam Hukuku"
+    },
+    {
+        "id": 37,
+        "field": "Sağlık Hukuku"
+    },
+    {
+        "id": 38,
+        "field": "Sermaye Piyasası Hukuku"
+    },
+    {
+        "id": 39,
+        "field": "Sigorta Hukuku"
+    },
+    {
+        "id": 40,
+        "field": "Silahlı Çatışma Hukuku"
+    },
+    {
+        "id": 41,
+        "field": "Şirketler Hukuku"
+    },
+    {
+        "id": 42,
+        "field": "Sosyal Güvenlik Hukuku"
+    },
+    {
+        "id": 43,
+        "field": "Spor Hukuku"
+    },
+    {
+        "id": 44,
+        "field": "Tazminat Hukuku"
+    },
+    {
+        "id": 45,
+        "field": "Ticaret Hukuku"
+    },
+    {
+        "id": 46,
+        "field": "Tüketici Hukuku"
+    },
+    {
+        "id": 47,
+        "field": "Vatandaşlık Hukuku"
+    },
+    {
+        "id": 48,
+        "field": "Vergi Hukuku"
+    }
+]

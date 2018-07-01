@@ -1,0 +1,114 @@
+<link rel="stylesheet" href="../assets/css/certificate.css">
+
+<md-content ng-controller="CertificateController as certificate" layout="row" layout-align="space-around" layout-padding="layout-padding"
+    ng-cloak="ng-cloak" class="login-form">
+    <div layout="row"></div>
+
+    <md-card flex="33">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>
+                    <span>Sertifika ve Diplomalar</span>
+                </h2>
+            </div>
+        </md-toolbar>
+
+        <md-card-content>
+            <form name="Form" method="POST" ng-submit="certificate.doCreateCertificate()">
+                <md-input-container class="md-block" flex="100">
+                    <code>Sertifika Adı</code>
+                    <input type="text" name="name" ng-model="certificate.certificateData.certificateName" aria-label="name" ng-required="true">
+                    <div ng-messages="Form.name.$error" role="alert" multiple="">
+                        <div ng-message="required" class="my-message">Sertifika adı giriniz.!</div>
+                    </div>
+
+                </md-input-container>
+
+                <md-input-container class="md-block" flex="100">
+                    <code>Dosya Tipi</code>
+                    <md-select ng-model="certificate.certificateData.fileType" name="fileType" aria-label="fileType" md-selected-text="certificate.getSelectedFileType()"
+                        ng-required="true">
+                        <md-optgroup label="Dosya Tipi" class="kuzibutton">
+                            <md-option ng-repeat="type in filesType" ng-value="type">{{type.fileType}}</md-option>
+                        </md-optgroup>
+                    </md-select>
+
+                    <div ng-messages="Form.fileType.$error" role="alert" multiple="">
+                        <div ng-message="required" class="my-message">Dosya tipi seçiniz !</div>
+                    </div>
+                </md-input-container>
+
+                <choose-file layout="row">
+                    <input id="fileInput" type="file" class="ng-hide">
+                    <md-input-container flex class="md-block kuzicont">
+                        <code>Dosya</code>
+                        <input type="text" name="namecertificate" ng-model="certificateFileName" aria-label="certificate" ng-disabled="true" ng-required="true">
+                        <div ng-messages="Form.namecertificate.$error" role="alert" multiple="">
+                            <div ng-message="required" class="my-message">Dosya seçmelisiniz !</div>
+                        </div>
+                    </md-input-container>
+
+                    <div>
+                        <md-button id="uploadButton" class="md-raised  kuzimg">
+                            <span>Dosya Seç</span>
+                        </md-button>
+                    </div>
+                </choose-file>
+
+                <div layout="row" style="float: right">
+                    <md-input-container class="md-block">
+                        <md-button class="md-raised md-primary kuzibutton" type="submit">Güncelle</md-button>
+                    </md-input-container>
+                </div>
+            </form>
+    </md-card>
+
+    <md-card flex="66">
+        <md-table-container>
+            <table md-table md-row-select="options.rowSelection" multiple="{{options.multiSelect}}" ng-model="selected" md-progress="promise">
+                <thead ng-if="!options.decapitate" md-head md-order="query.order" md-on-reorder="logOrder">
+                    <tr md-row>
+
+                        <th md-column md-order-by="type.value">
+                            <span>Sertifika veya Diploma Adı</span>
+                        </th>
+
+                        <th md-column md-numeric md-order-by="type.value" md-desc>
+                            <span>Dosya Tipi</span>
+                        </th>
+
+                        <th md-column md-numeric md-order-by="type.value" md-desc>
+                            <span>Yükleme Tarihi</span>
+                        </th>
+
+                        <th md-column md-order-by="comment">
+                            <span>İşlem</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody md-body>
+                    <tr md-row md-select="file" md-on-select="logItem" md-auto-select="options.autoSelect" ng-repeat="file in files.data  | limitTo: query.limit : (query.page -1) * query.limit">
+
+                        <td md-cell>{{file.certificateName}}</td>
+                        <td md-cell>{{file.fileType}}</td>
+                        <td md-cell>{{file.savedDate}}</td>
+                        <td md-cell>
+                            <md-button class="md-raised md-primary kuzisubmit" style="float: left" ng-click="certificate.DeleteFile(file,$event)">Sil</md-button>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+
+        </md-table-container>
+
+        <md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-total="{{files.count}}"
+            md-page-select="options.pageSelect" md-boundary-links="options.boundaryLinks" md-on-paginate="logPagination"></md-table-pagination>
+    </md-card>
+
+
+    </div>
+
+    </md-card-content>
+
+</md-content>

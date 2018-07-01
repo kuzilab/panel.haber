@@ -1,0 +1,317 @@
+[
+
+    {
+        "id": 1,
+        "field": "Adana Bilim ve Teknoloji Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 2,
+        "field": "Atılım Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 3,
+        "field": "Afyon Kocatepe Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 4,
+        "field": "Bahçeşehir Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 5,
+        "field": "Akdeniz Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 6,
+        "field": "Anadolu Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 7,
+        "field": "Beykent Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 8,
+        "field": "Ankara Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 9,
+        "field": "Bilkent Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 10,
+        "field": "Ankara Sosyal Bilimler Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 11,
+        "field": "Çağ Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 12,
+        "field": "Atatürk Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 13,
+        "field": "Çankaya Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 14,
+        "field": "Çukurova Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 15,
+        "field": "Doğuş Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 16,
+        "field": "Dicle Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 17,
+        "field": "Fatih Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 18,
+        "field": "Dokuz Eylül Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 19,
+        "field": "Fatih Sultan Mehmet Vakıf Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 20,
+        "field": "Erciyes Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 21,
+        "field": "Gediz Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 22,
+        "field": "Erzincan Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 23,
+        "field": "Hasan Kalyoncu (Gazikent) Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 24,
+        "field": "Galatasaray Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 25,
+        "field": "İstanbul Ticaret Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 26,
+        "field": "Gazi Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 27,
+        "field": "İstanbul Aydın Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 28,
+        "field": "Gaziantep Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 29,
+        "field": "İstanbul Bilgi Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 30,
+        "field": "Hacettepe Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 31,
+        "field": "İstanbul Kültür Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 32,
+        "field": "İnönü Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 33,
+        "field": "İstanbul Şehir Üniversitesi Hukuk Fakültesi"
+    },
+
+    {
+        "id": 34,
+        "field": "İstanbul Medeniyet Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 35,
+        "field": "İzmir Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 36,
+        "field": "İstanbul Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 37,
+        "field": "İzmir Ekonomi Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 38,
+        "field": "Karadeniz (Teknik) Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 39,
+        "field": "Koç Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 40,
+        "field": "Kırıkkale Üniversitesi Hukuk Fakültesi"
+    },
+
+    {
+        "id": 41,
+        "field": "Kadir Has Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 42,
+        "field": "Kocaeli Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 43,
+        "field": "Kemerburgaz Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 44,
+        "field": "Marmara Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 45,
+        "field": "Karatay Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 46,
+        "field": "Ondokuz Mayıs Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 47,
+        "field": "Mevlana Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 48,
+        "field": "Recep Tayyip Erdoğan Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 49,
+        "field": "Maltepe Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 50,
+        "field": "Sakarya Üniversitesi Hukuk Fakültesi "
+    },
+    {
+        "id": 51,
+        "field": "Medipol Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 52,
+        "field": "Selçuk Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 53,
+        "field": "MEF Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 54,
+        "field": "Süleyman Demirel Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 55,
+        "field": "Melikşah Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 56,
+        "field": "Türk - Alman Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 57,
+        "field": "Okan Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 58,
+        "field": "Uludağ Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 59,
+        "field": "Özyeğin Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 60,
+        "field": "Yalova Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 61,
+        "field": "Sabahattin Zaim Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 62,
+        "field": "Yıldırım Beyazıt Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 63,
+        "field": "Turgut Özal Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 64,
+        "field": "Gaziosmanpaşa Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 65,
+        "field": "TOBB Ekonomi ve Teknoloji Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 66,
+        "field": "Namık Kemal Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 67,
+        "field": "Uluslararası Antalya Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 68,
+        "field": "Necmettin Erbakan Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 69,
+        "field": "Ufuk Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 70,
+        "field": "Yeniyüzyıl Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 72,
+        "field": "Yaşar Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 73,
+        "field": "Yeditepe Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 74,
+        "field": "Zirve Üniversitesi Hukuk Fakültesi"
+    },
+    {
+        "id": 75,
+        "field": "Doğu Akdeniz Üniversitesi Hukuk Fakültesi (Kıbrıs)"
+    },
+    {
+        "id": 76,
+        "field": "Girne Amerikan Üniversitesi Hukuk Fakültesi (Kıbrıs)"
+    },
+    {
+        "id": 77,
+        "field": "Lefke Avrupa Üniversitesi Hukuk Fakültesi (Kıbrıs)"
+    },
+    {
+        "id": 78,
+        "field": "Uluslararası Kıbrıs Üniversitesi Hukuk Fakültesi (Kıbrıs)"
+    },
+    {
+        "id": 79,
+        "field": "Yakın Doğu Üniversitesi Hukuk Fakültesi (Kıbrıs)"
+    }
+]

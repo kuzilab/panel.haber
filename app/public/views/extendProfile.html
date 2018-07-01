@@ -1,0 +1,224 @@
+<link rel="stylesheet" href="../assets/css/extendProfile.css">
+
+
+
+
+
+<md-content data-ng-controller="extendController as extend" layout="row" layout-align="space-around" layout-padding="layout-padding"
+    ng-cloak="ng-cloak" class="login-form">
+
+    <md-card flex="flex">
+
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                Geniş Profil
+            </div>
+        </md-toolbar>
+
+        <md-card-content>
+            <form name="Form" method="POST" ng-submit="extend.doUpdateProfile()">
+
+                <!-- Optional Fields -->
+                <!-- ****************************************** -->
+                <div layout="row">
+
+                    <md-input-container class="md-block" flex="50">
+                        <label>Avukat Büro Adı</label>
+                        <input type="text" name="bureau" ng-model="extend.extendData.bureau" aria-label="bureau">
+                    </md-input-container>
+
+                    <md-input-container flex="50">
+                        <label>Tecrübe Yılı</label>
+                        <md-select name="experience" ng-model="extend.experience" aria-label="extend.extendData.experience" md-selected-text="extend.getExperience()">
+                            <md-optgroup label="Tecrübe Yılı" class="kuzibutton">
+                                <md-option ng-repeat="experience in experiences" ng-value="experience.field">{{experience.field}}</md-option>
+                            </md-optgroup>
+                        </md-select>
+                        <div ng-messages="Form.experience.$error" role="alert" multiple="">
+                            <div ng-message="required">Tecrübe yılınızı giriniz !</div>
+                        </div>
+
+                    </md-input-container>
+                </div>
+
+
+                <div layout="row">
+
+                    <md-input-container class="md-block" flex="100">
+                        <label>Adres</label>
+                        <input type="text" name="adres" ng-model="extend.extendData.address" ng-maxlength="250">
+                        <div ng-messages="Form.adres.$error" role="alert" multiple="">
+                            <div ng-message="maxlength" class="my-message">Karakter sınırı !!!</div>
+                        </div>
+                    </md-input-container>
+
+                </div>
+
+                <div layout="row">
+                    <md-switch ng-model="extend.extendData.iswebsite" aria-label="licence" class="md-warn">
+                    </md-switch>
+
+                    <md-input-container class="md-block" flex="50">
+                        <code>Şahsi Site Adı</code>
+                        <input type="text" name="website" ng-model="extend.extendData.website" ng-disabled="!extend.extendData.iswebsite" aria-label="website"
+                            ng-required="extend.extendData.iswebsite">
+                        <div ng-messages="Form.website.$error" role="alert" multiple="">
+                            <div ng-message="required">Şahsi site adınızı giriniz !</div>
+                        </div>
+                    </md-input-container>
+
+                    <md-switch ng-model="extend.extendData.isbureauweb" aria-label="licence" class="md-warn">
+                    </md-switch>
+
+                    <md-input-container class="md-block" flex="50">
+                        <code>Büro Site Adı</code>
+                        <input type="text" name="bureauweb" ng-model="extend.extendData.bureauweb" aria-label="bureauweb" ng-disabled="!extend.extendData.isbureauweb"
+                            ng-required="extend.extendData.isbureauweb">
+                        <div ng-messages="Form.bureauweb.$error" role="alert" multiple="">
+                            <div ng-message="required">Büro site adınızı giriniz !</div>
+                        </div>
+                    </md-input-container>
+                </div>
+
+                <div layout="row">
+                    <md-input-container class="md-block" flex="100">
+                        <label>Hakkımda</label>
+                        <textarea ng-model="extend.extendData.biography" aria-label="about" md-maxlength="500" rows="5" md-select-on-focus></textarea>
+                    </md-input-container>
+                </div>
+
+                <div layout="row">
+
+                    <md-input-container flex="100">
+                        <label>Anahtar Kelime</label>
+                        <md-chips ng-model="extend.keywords" name="keyword" readonly="extend.readonly" md-removable="extend.removable" md-max-chips="10"
+                            placeholder="kelime gir... ">
+                            <md-chip-template>
+                                <strong>{{$chip}}</strong>
+                                <em> (anahtar)</em>
+                            </md-chip-template>
+                        </md-chips>
+                        <div class="errors" ng-messages="Form.keyword.$error">
+                            <div ng-message="md-max-chips">Maksimum sayısa ulaşıldı !!!</div>
+                        </div>
+
+                    </md-input-container>
+                </div>
+
+                <div layout="row">
+
+                    <md-switch ng-model="extend.extendData.islicence" aria-label="licence" ng-change="extend.getWLicence()" class="md-warn">
+                    </md-switch>
+
+                    <md-input-container flex="50">
+                        <code>Lisans Okul Adı</code>
+                        <md-select name="licence" ng-model="extend.licence" aria-label="extend.licence" ng-disabled="!extend.extendData.islicence"
+                            ng-required="extend.extendData.islicence" md-selected-text="extend.getLicence()">
+                            <md-optgroup label="Lisans Yeri" class="kuzibutton">
+                                <md-option ng-repeat="licence in licences" ng-value="licence.field">{{licence.field}}</md-option>
+                            </md-optgroup>
+                        </md-select>
+
+                        <div ng-messages="Form.licence.$error" role="alert" multiple="">
+                            <div ng-message="required ">Lisans okul adınızı giriniz giriniz !</div>
+                        </div>
+                    </md-input-container>
+
+
+                    <md-input-container flex="50">
+                        <code>Lisans Yılı</code>
+                        <md-select name="licenceyear" ng-model="extend.licenceyear" aria-label="extend.licenceyear" ng-disabled="!extend.extendData.islicence"
+                            md-selected-text="extend.getSelectedLicenceYear()" ng-required="extend.extendData.islicence">
+                            <md-optgroup label="Lisans Yılı" class="kuzibutton">
+                                <md-option ng-repeat="licenceyear in licencesyears" ng-value="licenceyear.field">{{licenceyear.field}}</md-option>
+                            </md-optgroup>
+                        </md-select>
+                        <div ng-messages="Form.licenceyear.$error" role="alert" multiple="">
+                            <div ng-message="required">Lisans yılınızı giriniz !</div>
+                        </div>
+                    </md-input-container>
+                </div>
+
+                <div layout="row ">
+
+                    <md-switch ng-model="extend.extendData.ishlicence" aria-label="licence" class="md-warn" ng-change="extend.getHLicence()">
+                    </md-switch>
+
+                    <md-input-container flex="50">
+                        <code>Yüksek Lisans Okul Adı</code>
+                        <md-select name="highlicence" ng-model="extend.highlicence" aria-label="extend.highlicence" ng-disabled="!extend.extendData.ishlicence"
+                            ng-required="extend.extendData.ishlicence" md-selected-text="extend.getHighLicence()">
+                            <md-optgroup label="Yüksek Lisans Yeri" class="kuzibutton">
+                                <md-option ng-repeat="highlicence in licences" ng-value="highlicence.field">{{highlicence.field}}</md-option>
+                            </md-optgroup>
+                        </md-select>
+
+                        <div ng-messages="Form.highlicence.$error" role="alert" multiple="">
+                            <div ng-message="required">Yüksek lisans okul adınızı giriniz !</div>
+                        </div>
+                    </md-input-container>
+
+                    <md-input-container flex="50">
+                        <code>Yüksek Lisans Yılı</code>
+                        <md-select name="highlicenceyear" ng-model="extend.highlicenceyear" aria-label="extend.highlicenceyear" ng-disabled="!extend.extendData.ishlicence"
+                            ng-required="extend.extendData.ishlicence" md-selected-text="extend.getSelectedHighLicenceYear()">
+                            <md-optgroup label="Yüksek Lisans Yılı" class="kuzibutton">
+                                <md-option ng-repeat="highlicenceyear in licencesyears" ng-value="highlicenceyear.field">{{highlicenceyear.field}}</md-option>
+                            </md-optgroup>
+                        </md-select>
+
+                        <div ng-messages="Form.highlicenceyear.$error" role="alert" multiple="">
+                            <div ng-message="required">Yüksek Lisans yılınızı giriniz !</div>
+                        </div>
+                    </md-input-container>
+                </div>
+
+                <div layout="row">
+
+                    <md-switch ng-model="extend.extendData.isplicence" aria-label="licence" class="md-warn">
+                    </md-switch>
+
+                    <md-input-container flex="50">
+                        <code>Doktora Okul Adı</code>
+                        <md-select name="postlicence" ng-model="extend.postlicence" aria-label="extend.postlicence" ng-disabled="!extend.extendData.isplicence"
+                            ng-required="extend.extendData.isplicence" md-selected-text="extend.getPostLicence()">
+                            <md-optgroup label="Doktora Lisans Yeri" class="kuzibutton">
+                                <md-option ng-repeat="postlicence in licences" ng-value="postlicence.field">{{postlicence.field}}</md-option>
+                            </md-optgroup>
+                        </md-select>
+
+                        <div ng-messages="Form.postlicence.$error" role="alert" multiple="">
+                            <div ng-message="required">Doktora okul adınızı giriniz!</div>
+                        </div>
+                    </md-input-container>
+
+
+                    <md-input-container flex="50">
+                        <code>Doktora Yılı</code>
+                        <md-select name="postlicenceyear" ng-model="extend.postlicenceyear" aria-label="extend.postlicenceyear" ng-disabled="!extend.extendData.isplicence"
+                            ng-required="extend.extendData.isplicence" md-selected-text="extend.getSelectedPostLicenceYear()">
+                            <md-optgroup label="Doktora Lisans Yılı" class="kuzibutton">
+                                <md-option ng-repeat="postlicenceyear in licencesyears" ng-value="postlicenceyear.field">{{postlicenceyear.field}}</md-option>
+                            </md-optgroup>
+                        </md-select>
+
+                        <div ng-messages="Form.postlicenceyear.$error" role="alert" multiple="">
+                            <div ng-message="required">Doktora yılınızı giriniz !</div>
+                        </div>
+                    </md-input-container>
+                </div>
+
+
+                <div layout="row" style="float: right">
+                    <md-input-container class="md-block">
+                        <md-button class="md-raised md-primary kuzibutton" type="submit">Güncelle</md-button>
+                    </md-input-container>
+
+                </div>
+
+            </form>
+
+
+</md-content>
+
+</md-card-content>

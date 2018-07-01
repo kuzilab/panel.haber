@@ -1,0 +1,47 @@
+#gmaps {
+    width: 100%;
+    height: 80%;
+    position: relative !important;
+}
+
+.danismanlik {
+    text-transform: capitalize !important;
+}
+
+.kuzicard {
+    margin-top: 0.5% !important;
+}
+
+.insta {
+    margin-bottom: 8px !important;
+}
+
+.kuziauto {
+    margin-right: 10px !important;
+}
+
+.md-button {
+    color: currentColor;
+}
+
+.md-button:not([disabled]):hover {
+    background-color: rgba(158, 158, 158, 0.2);
+}
+
+.md-button[disabled] {
+    color: rgba(0, 0, 0, 0.26);
+    background-color: transparent;
+}
+
+.md-button.md-raised:not([disabled]) {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.md-warn {
+    background-color: rgb(244, 81, 30);
+}
+
+.md-pink {
+    background-color: rgb(222, 105, 158) !important;
+    color: white !important;
+}

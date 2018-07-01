@@ -1,0 +1,27 @@
+.kuzibutton {
+    text-transform: capitalize;
+    float: right;
+}
+
+.kuziselect {
+    display: inline !important;
+}
+
+.kuzitoolbar {
+    text-align: right;
+}
+
+.kuzimg {
+    margin-right: -0.5% !important;
+    text-transform: capitalize
+}
+
+.kuzicont {
+    padding-right: 5%;
+}
+
+#gmaps {
+    width: 100%;
+    height: 80%;
+    position: relative !important;
+}

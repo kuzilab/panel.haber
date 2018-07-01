@@ -1,0 +1,92 @@
+<md-content ng-controller="CategoryController as category" layout="row" layout-align="space-around" layout-padding="layout-padding"
+    ng-cloak="ng-cloak" class="login-form">
+    <div layout="row"></div>
+
+    <md-card flex="33">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>
+                    <span>Kategoriler</span>
+                </h2>
+            </div>
+        </md-toolbar>
+
+        <md-card-content>
+            <form name="Form" method="POST" ng-submit="category.doCreateCategory()">
+
+                <md-input-container class="md-block" flex="100">
+                    <code>Kategori Adı</code>
+                    <input type="text" name="name" ng-model="category.categoryData.name" aria-label="name" ng-required="true">
+                    <div ng-messages="Form.name.$error" role="alert" multiple="">
+                        <div ng-message="required" class="my-message">Kategori Adı Giriniz !</div>
+                    </div>
+                </md-input-container>
+
+                <div layout="row" style="float: right">
+                    <md-input-container class="md-block">
+                        <md-button class="md-raised md-primary kuzibutton" ng-click="category.CancelAction()">İptal</md-button>
+                    </md-input-container>
+                </div>
+
+                <div layout="row" style="float: right">
+                    <md-input-container class="md-block">
+                        <md-button class="md-raised md-primary kuzibutton" type="submit">{{action_text}}</md-button>
+                    </md-input-container>
+                </div>
+            </form>
+
+        </md-card-content>
+    </md-card>
+
+    <md-card flex="66">
+        <md-table-container>
+            <table md-table md-row-select="options.rowSelection" multiple="{{options.multiSelect}}" ng-model="selected" md-progress="promise">
+                <thead ng-if="!options.decapitate" md-head md-order="query.order" md-on-reorder="logOrder">
+                    <tr md-row>
+
+                        <th md-column md-order-by="type.value">
+                            <span>ID</span>
+                        </th>
+
+                        <th md-column md-numeric md-order-by="type.value" md-desc>
+                            <span>Kategori Adı</span>
+                        </th>
+
+                        <th md-column md-numeric md-order-by="type.value" md-desc>
+                            <span>İşlem Tarihi</span>
+                        </th>
+
+                        <th md-column md-order-by="comment">
+                            <span>Sil</span>
+                        </th>
+
+                        <th md-column md-order-by="comment">
+                            <span>Seç</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody md-body>
+                    <tr md-row md-select="category" md-on-select="logItem" md-auto-select="options.autoSelect" ng-repeat="category in categories.data  | limitTo: query.limit : (query.page -1) * query.limit">
+
+                        <td md-cell>{{category._id}}</td>
+                        <td md-cell>{{category.name}}</td>
+                        <td md-cell>{{category.savedDate}}</td>
+                        <td md-cell>
+                            <md-button class="md-raised md-primary kuzisubmit md-button md-ink-ripple" type="button" ng-click="DeleteCategory(category,$event)"
+                                style="text-transform: capitalize">Sil</md-button>
+                        </td>
+                        <td md-cell>
+                            <md-button class="md-raised md-primary kuzisubmit md-button md-ink-ripple" type="button" ng-click="ChooseCategory(category,$event)"
+                                style="text-transform: capitalize">Seç</md-button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </md-table-container>
+
+        <md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-total="{{categories.count}}"
+            md-page-select="options.pageSelect" md-boundary-links="options.boundaryLinks" md-on-paginate="logPagination"></md-table-pagination>
+    </md-card>
+
+</md-content>

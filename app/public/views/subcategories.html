@@ -1,0 +1,111 @@
+<md-content ng-controller="SubCategoryController as sub" layout="column" layout-align="space-around" layout-padding="layout-padding"
+    ng-cloak="ng-cloak" class="login-form">
+
+    <md-card>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>
+                    <span>Alt Kategoriler</span>
+                </h2>
+            </div>
+        </md-toolbar>
+
+        <md-card-content>
+            <form name="Form" method="POST" ng-submit="doCreateSubCategory()">
+
+                <md-input-container class="md-block" flex="100">
+                    <code>Kategori Adı</code>
+                    <md-select name="name" ng-model="sub.subcategoryData.categoryId" aria-label="sub.subcategoryData.categoryId" ng-required="true"
+                        md-selected-text="sub.getCategory()">
+                        <md-optgroup label="Kategori Adı" class="kuzibutton">
+                            <md-option ng-repeat="category in categories.data" ng-value="category._id">{{category.name}}</md-option>
+                        </md-optgroup>
+                    </md-select>
+
+                    <div ng-messages="Form.name.$error" role="alert" multiple="">
+                        <div ng-message="required ">Kategori Adını Seçiniz !</div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container class="md-block" flex="100">
+                    <code>Alt Kategori Adı</code>
+                    <input type="text" name="subname" ng-model="sub.subcategoryData.subname" aria-label="sub.subcategoryData.subname" ng-required="true">
+                    <div ng-messages="Form.subname.$error" role="alert" multiple="">
+                        <div ng-message="required" class="my-message">Alt Kategori Adı Giriniz !</div>
+                    </div>
+                </md-input-container>
+
+                <div layout="row" style="float: right">
+                    <md-input-container class="md-block">
+                        <md-button class="md-raised md-primary kuzibutton" ng-click="sub.CancelAction()">İptal</md-button>
+                    </md-input-container>
+                </div>
+
+                <div layout="row" style="float: right">
+                    <md-input-container class="md-block">
+                        <md-button class="md-raised md-primary kuzibutton" type="submit">{{action_text}}</md-button>
+                    </md-input-container>
+                </div>
+            </form>
+
+        </md-card-content>
+    </md-card>
+
+    <md-card>
+        <md-table-container>
+            <table md-table md-row-select="options.rowSelection" multiple="{{options.multiSelect}}" ng-model="selected" md-progress="promise">
+                <thead ng-if="!options.decapitate" md-head md-order="query.order" md-on-reorder="logOrder">
+                    <tr md-row>
+
+                        <th md-column md-order-by="type.value">
+                            <span>ID</span>
+                        </th>
+
+                        <th md-column md-numeric md-order-by="type.value" md-desc>
+                            <span>Kategori Adı</span>
+                        </th>
+                        <th md-column md-numeric md-order-by="type.value" md-desc>
+                            <span>Alt Kategori Adı</span>
+                        </th>
+
+                        <th md-column md-numeric md-order-by="type.value" md-desc>
+                            <span>İşlem Tarihi</span>
+                        </th>
+
+                        <th md-column md-order-by="comment">
+                            <span>Sil</span>
+                        </th>
+
+                        <th md-column md-order-by="comment">
+                            <span>Seç</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody md-body>
+                    <tr md-row md-select="subcategory" md-on-select="logItem" md-auto-select="options.autoSelect" ng-repeat="subcategory in subcategories.data  | limitTo: query.limit : (query.page -1) * query.limit">
+
+                        <td md-cell>{{subcategory._id}}</td>
+                        <td md-cell>{{subcategory.categoryName}}</td>
+                        <td md-cell>{{subcategory.subname}}</td>
+                        <td md-cell>{{subcategory.savedDate}}</td>
+                        <td md-cell>
+                            <md-button class="md-raised md-primary kuzisubmit md-button md-ink-ripple" type="button" ng-click="DeleteSubCategory(subcategory,$event)"
+                                style="text-transform: capitalize">Sil</md-button>
+                        </td>
+                        <td md-cell>
+                            <md-button class="md-raised md-primary kuzisubmit md-button md-ink-ripple" type="button" ng-click="ChooseSubCategory(subcategory,$event)"
+                                style="text-transform: capitalize">Seç</md-button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </md-table-container>
+
+        <md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-total="{{subcategories.count}}"
+            md-page-select="options.pageSelect" md-boundary-links="options.boundaryLinks" md-on-paginate="logPagination"></md-table-pagination>
+    </md-card>
+
+
+
+</md-content>

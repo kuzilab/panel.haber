@@ -1,0 +1,155 @@
+<link rel="stylesheet" href="../assets/css/videoessay.css">
+
+
+<div ng-controller="VideoEssayController as videoessay" layout="column" class="kuziback">
+
+    <!-- Toolbar ********************* -->
+    <div layout="row">
+        <md-card flex="100">
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h2>Video Haber</h2>
+                    <span flex></span>
+
+                </div>
+            </md-toolbar>
+    </div>
+
+    <md-card>
+        <md-card-content>
+            <form name="Form" method="POST" ng-submit="videoessay.doCreateVideoEssay()">
+
+                <div layout="row">
+                    <md-input-container class="md-block" flex="33">
+                        <label>Haber Adı</label>
+                        <input type="text" name="videoessayname" ng-model="videoessay.videoessayData.videoessayname" ng-required="true">
+                        <div ng-messages="Form.videoessayname.$error" role="alert" multiple="">
+                            <div ng-message="required" class="my-message">Makale adını giriniz !</div>
+                        </div>
+                    </md-input-container>
+
+                    <md-input-container class="md-block" flex="33">
+                        <label>Haber Konusu</label>
+                        <input type="text" name="videoessaysubject" ng-model="videoessay.videoessayData.videoessaysubject" ng-required="true">
+                        <div ng-messages="Form.videoessaysubject.$error" role="alert" multiple="">
+                            <div ng-message="required" class="my-message">Makale konusunu giriniz !</div>
+                        </div>
+                    </md-input-container>
+
+                    <md-input-container class="md-block" flex="33">
+                        <label>Video Linki</label>
+                        <input type="text" name="videoessaylink" ng-model="videoessay.videoessayData.videoessaylink" ng-required="true">
+                        <div ng-messages="Form.videoessaylink.$error" role="alert" multiple="">
+                            <div ng-message="required" class="my-message">Makale linki giriniz !!!</div>
+                        </div>
+                    </md-input-container>
+                    <md-button class="md-raised md-primary" type="submit">{{action_text}}</md-button>
+                </div>
+
+
+                <div layout="row">
+                    <md-input-container class="md-block" flex="100">
+                        <code>Alt Kategori</code>
+                        <md-select name="name" ng-model="videoessay.videoessayData.subCategoryId" aria-label="videoessay.videoessayData.subCategoryId"
+                            ng-required="true" md-selected-text="videoessay.getSubCategory()">
+                            <md-optgroup label="Alt Kategori Adı" class="kuzibutton">
+                                <md-option ng-repeat="subcategory in subcategories.data" ng-value="subcategory._id">{{subcategory.subname}}</md-option>
+                            </md-optgroup>
+                        </md-select>
+
+                        <div ng-messages="Form.name.$error" role="alert" multiple="">
+                            <div ng-message="required ">Kategori Adını Seçiniz !</div>
+                        </div>
+                    </md-input-container>
+                </div>
+
+                <div layout="row">
+                    <md-input-container flex="100" class="md-block">
+                        <md-chips ng-model="videoessay.videoessayData.keywords" name="keywords" md-max-chips="10" placeholder="anahtar kelime..."
+                            ng-required="true">
+                            <md-chip-template>
+                                <strong>{{$chip}}</strong>
+                            </md-chip-template>
+                        </md-chips>
+
+                    </md-input-container>
+
+                    <div class="errors" ng-messages="Form.keywords.$error">
+                        <div ng-message="md-max-chips">Maksimum sayısa ulaşıldı.(10 tane)</div>
+                    </div>
+                </div>
+
+                <div layout="row">
+                    <md-input-container class="md-block" flex="100">
+                        <label>Haber İçeriği</label>
+                        <textarea name="videoessaycontent" ng-model="videoessay.videoessayData.videoessaycontent" aria-label="content" md-maxlength="4000"
+                            rows="10" md-select-on-focus ng-required="true"></textarea>
+
+                        <div ng-messages="Form.videoessaycontent.$error" role="alert" multiple="">
+                            <div ng-message="required" class="my-message">Makale içeriği giriniz !!!</div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </form>
+        </md-card-content>
+    </md-card>
+
+    <div layout="row">
+        <md-card flex="100">
+            <md-table-container>
+                <table md-table md-row-select="options.rowSelection" multiple="{{options.multiSelect}}" ng-model="selected" md-progress="promise">
+                    <thead ng-if="!options.decapitate" md-head md-order="query.order" md-on-reorder="logOrder">
+
+                        <tr md-row>
+
+                            <th md-column style="text-align: center">
+                                <span>Haber Adı</span>
+                            </th>
+
+                            <th md-column style="text-align: center">
+                                <span>Haber Konusu</span>
+                            </th>
+
+                            <th md-column style="text-align: center">
+                                <span>Video Linki</span>
+                            </th>
+
+                            <th md-column style="text-align: center">
+                                <span>Yükleme Tarihi</span>
+                            </th>
+
+                            <th md-column style="text-align: center">
+                                <span>Silme</span>
+                            </th>
+
+                            <th md-column style="text-align: center">
+                                <span>Güncelleme</span>
+                            </th>
+                        </tr>
+
+                    </thead>
+                    <tbody md-body>
+                        <tr md-row md-select="essay" md-on-select="logItem" md-auto-select="options.autoSelect" ng-repeat="essay in videoessays.data | limitTo: query.limit : (query.page -1) * query.limit">
+                            <td md-cell style="text-align: center">{{essay.videoessayname}}</td>
+                            <td md-cell style="text-align: center">{{essay.videoessaysubject}}</td>
+                            <td md-cell style="text-align: center">{{essay.videoessaylink}}</td>
+                            <td md-cell style="text-align: center">{{essay.savedDate}}</td>
+                            <td md-cell style="text-align: center">
+                                <md-button class="md-raised md-primary kuzisubmit" ng-click="videoessay.DeleteVideoEssay(essay,$event)" style="text-transform: capitalize">Sil</md-button>
+                            </td>
+                            <td md-cell style="text-align: center">
+                                <md-button class="md-raised md-primary kuzisubmit" ng-click="videoessay.ChooseVideoEssay(essay,$event)" style="text-transform: capitalize">Düzenle</md-button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </md-table-container>
+
+            <md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-total="{{videoessays.data.count}}"
+                md-page-select="options.pageSelect" md-boundary-links="options.boundaryLinks" md-on-paginate="logPagination"></md-table-pagination>
+        </md-card>
+    </div>
+
+
+</div>

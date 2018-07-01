@@ -1,0 +1,34 @@
+[{
+        "balance": "body > div:nth-child(7) > table.table.table-condensed.bb > tbody > tr:nth-child(6) > td:nth-child(1)",
+        "coin": "body > div:nth-child(7) > table.table.table-condensed.bb > tbody > tr:nth-child(6) > td:nth-child(4)",
+        "cointotal": "body > div:nth-child(7) > table.table.table-condensed.bb > tbody > tr:nth-child(6) > td:nth-child(6)",
+        "coinType": "Bitcoin"
+    },
+    {
+        "balance": "body > div:nth-child(7) > table.table.table-condensed.bb > tbody > tr:nth-child(7) > td:nth-child(1)",
+        "coin": "body > div:nth-child(7) > table.table.table-condensed.bb > tbody > tr:nth-child(7) > td:nth-child(4)",
+        "cointotal": "body > div:nth-child(7) > table.table.table-condensed.bb > tbody > tr:nth-child(7) > td:nth-child(6)",
+        "coinType": "Bitcoin"
+    },
+
+    {
+        "balance": "body > div:nth-child(7) > table.table.table-condensed.bb > tbody > tr:nth-child(8) > td:nth-child(1)",
+        "coin": "body > div:nth-child(7) > table.table.table-condensed.bb > tbody > tr:nth-child(8) > td:nth-child(4)",
+        "cointotal": "body > div:nth-child(7) > table.table.table-condensed.bb > tbody > tr:nth-child(8) > td:nth-child(6)",
+        "coinType": "Bitcoin"
+    },
+
+    {
+        "balance": "body > div:nth-child(7) > table.table.table-condensed.bb > tbody > tr:nth-child(9) > td:nth-child(1)",
+        "coin": "body > div:nth-child(7) > table.table.table-condensed.bb > tbody > tr:nth-child(9) > td:nth-child(4)",
+        "cointotal": "body > div:nth-child(7) > table.table.table-condensed.bb > tbody > tr:nth-child(9) > td:nth-child(6)",
+        "coinType": "Bitcoin"
+    },
+
+    {
+        "balance": "body > div:nth-child(7) > table.table.table-condensed.bb > tbody > tr:nth-child(10) > td:nth-child(1)",
+        "coin": "body > div:nth-child(7) > table.table.table-condensed.bb > tbody > tr:nth-child(10) > td:nth-child(4)",
+        "cointotal": "body > div:nth-child(7) > table.table.table-condensed.bb > tbody > tr:nth-child(10) > td:nth-child(6)",
+        "coinType": "Bitcoin"
+    }
+]

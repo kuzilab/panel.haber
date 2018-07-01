@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="../assets/css/test.css">
+
+
+<div ng-controller="TestController as test" layout="column" class="kuziback">
+
+    <!-- Toolbar ********************* -->
+    <div layout="row">
+        <md-card flex="100">
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h2>Makale</h2>
+                    <span flex></span>
+
+                    <md-button class="md-fab md-mini md-button md-ink-ripple" aria-label="detail" ng-click="essay.Back($event,item)">
+                        <md-icon ng-bind="'keyboard_backspace'"></md-icon>
+                    </md-button>
+                </div>
+            </md-toolbar>
+    </div>
+
+    <md-card>
+
+        <md-content>
+
+            <textarea name="editor" froala ng-model="trustedHtml" required>
+            </textarea>
+
+        </md-content>
+
+    </md-card>
+
+
+
+
+</div>

@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="../assets/css/login.css">
+
+<md-content ng-controller="LoginController as login" layout="row" layout-align="space-around" layout-padding="layout-padding"
+    ng-cloak="ng-cloak" class="login-form">
+
+    <md-card flex="flex" flex-gt-sm="50" flex-gt-md="33" class="kuzi-login">
+
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>
+                    <span>Haber Giriş Paneli</span>
+                </h2>
+            </div>
+        </md-toolbar>
+
+        <md-progress-linear md-mode="query" ng-disabled="login.processing"></md-progress-linear>
+
+        <md-card-content>
+            <form name="Form" method="POST" ng-submit="login.doLogin()">
+
+                <md-input-container class="md-block">
+                    <label>Email</label>
+                    <input type="text" name="email" ng-model="login.loginData.email" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" ng-required="true">
+                    <div ng-messages="Form.email.$error" role="alert" multiple="">
+                        <div ng-message="required" class="my-message">Email adresinizi giriniz!</div>
+                        <div ng-message="pattern" class="my-message">Email Formatı Yanlış! örn. test@test.com</div>
+                    </div>
+                </md-input-container>
+
+
+                <md-input-container class="md-block">
+                    <label>Şifre</label>
+                    <input type="password" name="password" ng-model="login.loginData.password" md-maxlength="16" ng-required="true">
+                    <div ng-messages="Form.password.$error" role="alert" multiple="">
+                        <div ng-message="required" class="my-message">Şifrenizi giriniz !</div>
+                    </div>
+                </md-input-container>
+
+                <md-button ng-disabled="!Form.$valid" type="submit" class="md-raised md-primary kuzisubmit" style="float: right;">Giriş Yap</md-button>
+            </form>
+
+            <md-button class="md-raised md-primary kuzisubmit" style="float: left" ng-click="login.GoAccount()">Kayıt Ol</md-button>
+
+        </md-card-content>
+    </md-card>
+</md-content>

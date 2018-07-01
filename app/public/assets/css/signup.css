@@ -1,0 +1,13 @@
+.kuzibutton {
+    text-transform: capitalize;
+}
+
+#gmaps {
+    width: 100%;
+    height: 80%;
+    position: relative !important;
+}
+
+.kuzi-login {
+    margin-top: 1% !important;
+}

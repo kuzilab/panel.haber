@@ -1,0 +1,122 @@
+<link rel="stylesheet" href="../assets/css/signup.css">
+
+<md-content ng-controller="SignupController as signup" layout="row" layout-align="space-around" layout-padding="layout-padding"
+    ng-cloak="ng-cloak" class="login-form">
+
+    <md-card flex="flex" flex-gt-sm="80" flex-gt-md="50" class="kuzi-login">
+
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>
+                    <span>Haber Kayıt Paneli</span>
+                </h2>
+            </div>
+        </md-toolbar>
+
+        <md-progress-linear md-mode="query" ng-disabled="signup.processing"></md-progress-linear>
+
+        <md-card-content>
+            <form name="Form" method="POST" ng-submit="signup.doCreateAccount()">
+                <div layout="row" flex="100">
+                    <md-input-container class="md-block" flex="100">
+                        <label>Email</label>
+                        <input type="text" name="email" ng-model="signup.signupData.email" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/"
+                            required>
+                        <div ng-messages="Form.email.$error" role="alert" multiple="">
+                            <div ng-message="required" class="my-message">Email adresinizi giriniz!</div>
+                            <div ng-message="pattern" class="my-message">Email Formatı Yanlış! örn. test@test.com</div>
+                        </div>
+                    </md-input-container>
+
+
+
+                </div>
+
+                <div layout="row">
+                    <md-input-container class="md-block" flex="50">
+                        <label>Adı Soyadı</label>
+                        <input type="text" name="namesurname" ng-model="signup.signupData.namesurname" required>
+                        <div ng-messages="Form.namesurname.$error" role="alert" multiple="">
+                            <div ng-message="required" class="my-message">Adınızı soyadınızı giriniz!</div>
+                        </div>
+                    </md-input-container>
+
+                    <md-input-container class="md-block" flex="50">
+                        <label>Telefon</label>
+                        <input name="phone" type="tel" ng-model="signup.signupData.phone" ng-pattern="/^[0-9]{3} [0-9]{3} [0-9]{2} [0-9]{2}$/" required
+                        />
+                        <div ng-messages="Form.phone.$error" role="alert" multiple="">
+                            <div ng-message="pattern">### ### ## ## şeklinde giriniz!</div>
+                            <div ng-message="required">Telefon numaranızı giriniz!</div>
+                        </div>
+                    </md-input-container>
+                </div>
+
+                <div layout="row">
+
+                    <md-input-container class="md-block" flex="50">
+                        <label>Şifre</label>
+                        <input type="password" name="password" ng-model="signup.signupData.passwordPlain" md-maxlength="16" required>
+                        <div ng-messages="Form.password.$error" role="alert" multiple="">
+                            <div ng-message="maxlength" class="my-message">Çok uzun şifre!</div>
+                        </div>
+                    </md-input-container>
+
+                    <md-input-container class="md-block" flex="50">
+                        <label>Şifre Tekrar</label>
+                        <input type="password" name="repassword" ng-pattern="{{signup.signupData.passwordPlain}}" ng-model="signup.signupData.repassword"
+                            md-maxlength="16" required>
+                        <div ng-messages="Form.repassword.$error" role="alert" multiple="">
+                            <div ng-message="required" class="my-message">Zorunlu Alan</div>
+                            <div ng-message="pattern" class="my-message">Şifreler Eşleşmiyor!</div>
+                        </div>
+                    </md-input-container>
+                </div>
+
+                <div layout="row" style="float: right;">
+
+                    <md-input-container class="md-block">
+                        <md-button class="md-raised md-primary kuzibutton" ng-click="signup.doGoLogin($event)">İptal</md-button>
+                    </md-input-container>
+
+                    <md-input-container class="md-block">
+                        <md-button class="md-raised md-primary kuzibutton" style="float: right" type="submit">Kaydet</md-button>
+                    </md-input-container>
+
+
+                    <span flex></span>
+                </div>
+
+            </form>
+        </md-card-content>
+    </md-card>
+</md-content>
+
+<div style="visibility: hidden">
+    <div class="md-dialog-container" id="mapDialogShow">
+        <md-dialog layout-padding="" aria-label="map" style="max-width: 80%; max-height: 80%; width: 90%; height: 90%; border-radius: 0;">
+
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+
+                    <md-button class="md-raised md-warn" ng-click="signup.deleteMarker()">
+                        <span style="text-transform: capitalize">Temizle</span>
+                    </md-button>
+
+
+                    <span flex></span>
+                    <md-button class="md-raised md-warn" ng-click="signup.CloseCancel()">Tamam</md-button>
+
+                    <!--                      <md-button class="md-icon-button" ng-click="signup.CloseCancel()">
+                        <md-icon md-svg-src="../assets/images/ic_close_black_24px.svg" aria-label="Close dialog"></md-icon>
+                    </md-button>
+                    -->
+                </div>
+            </md-toolbar>
+
+            <md-content>
+                <div id="gmaps"></div>
+            </md-content>
+        </md-dialog>
+    </div>
+</div>

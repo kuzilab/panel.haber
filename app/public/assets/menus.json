@@ -1,0 +1,50 @@
+[{
+        "name": "Profil",
+        "icon": "account_circle",
+        "enabled": "true",
+        "userType": "2",
+        "link": "dashboard"
+    },
+    {
+        "name": "Makaleler (Video)",
+        "icon": "movie",
+        "enabled": "true",
+        "userType": "2",
+        "link": "videoessay"
+    },
+    {
+        "name": "Makaleler (Yazı)",
+        "icon": "subtitles",
+        "enabled": "true",
+        "userType": "2",
+        "link": "essays"
+    },
+    {
+        "name": "Yorumlar",
+        "icon": "comment",
+        "enabled": "true",
+        "userType": "2",
+        "link": "comment"
+    },
+    {
+        "name": "Kategoriler",
+        "icon": "donut_large",
+        "enabled": "true",
+        "userType": "admin",
+        "link": "categories"
+    },
+    {
+        "name": "Alt Kategoriler",
+        "icon": "donut_small",
+        "enabled": "true",
+        "userType": "admin",
+        "link": "subcategories"
+    },
+    {
+        "name": "Takım",
+        "icon": "tag_faces",
+        "enabled": "true",
+        "userType": "admin",
+        "link": "team"
+    }
+]
